@@ -47,13 +47,13 @@ Use `-h` or `--help` with the script to view all available configuration options
 
 To start training the model with default settings, simply run:
 
-python train_calib.py  
+`python train_calib.py`
 
 with your own settings of hyperparameters.
 
 You can customize training by specifying command-line arguments. For example:
 
-python main.py --epochs 50 --arch Unet --encoder resnet34
+`python main.py --epochs 50 --arch Unet --encoder resnet34`
 
 Refer to the script's help for more detailed information on all available options.
 
