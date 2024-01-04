@@ -27,6 +27,6 @@ Before you begin, ensure you have met the following requirements:
 
 Clone this repository and install the required Python packages.
 
-git clone [https://github.com/limingshi1994/GEOInformed]
-cd [local repository]
+git clone [https://github.com/limingshi1994/GEOInformed]  
+cd [local repository]  
 pip install -r requirements.txt
