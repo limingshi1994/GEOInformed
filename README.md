@@ -43,6 +43,40 @@ The script `train_calib.py` uses a command-line interface for configuration. You
 
 Use `-h` or `--help` with the script to view all available configuration options.
 
+## Generating Input Samples
+
+For input data, you need it properly formatted. This involves downloading the relevant satellite images and partitioning them into kaartbladen size, as well as generating corresponding cloud masks. Follow these steps to prepare your input data:
+
+### 1. Downloading and Partitioning Data
+
+Before training the model, you need to download the satellite imagery and partition it into smaller segments or tiles. This can be done using the `generate_kaartbladen_allbands.py` script. This script is responsible for:
+
+- Downloading satellite images from the specified sources
+- Partitioning the images into smaller, more manageable tiles or segments
+- Organizing the data into a structure suitable for training
+
+To run the script, navigate to the directory containing either `generate_kaartbladen_allbands.py` or `generate_kaartbladen.py` and execute:
+
+`python generate_kaartbladen_allbands.py [options]`
+
+Replace `[options]` with any command-line arguments the script accepts for customization, such as specifying the directory for downloads, the indices of the tiles, or the specific satellite bands you wish to download.
+
+### 2. Generating Cloud Masks
+
+Once you have your satellite images, you may need to generate cloud masks to exclude clouds in the images. This step is crucial for maintaining the accuracy of your segmentation model, as clouds can significantly obstruct the underlying geographical features.
+
+Use the `compute_cloud_masks.py` script to generate cloud masks corresponding to your satellite images. The script processes each image and produces a mask indicating the presence of clouds.
+
+To generate cloud masks, navigate to the directory containing `compute_cloud_masks.py` and run:
+
+`python compute_cloud_masks.py [options]`
+
+Again, replace `[options]` with the necessary command-line arguments to specify the input images' directory, output directory, and any other parameters required by the script.
+
+### Final Note
+
+Ensure that both the segmented satellite images and the cloud masks are stored in an organized manner, as specified in the configuration of the main segmentation script. The paths to these datasets should be correctly indicated in the arguments of the main script when initiating training or validation.
+
 ## Training
 
 To start training the model with default settings, simply run:
