@@ -1,4 +1,4 @@
-# BVM Segmentation Script
+# BVM Segmentation Example
 
 This repository contains scripts for training and validating satellite imagery segmentation models using the PyTorch framework and the dataset of Flemish sentinel-2 BVM.
 
