@@ -2,6 +2,9 @@
 
 This repository contains scripts for training and validating satellite imagery segmentation models using the PyTorch framework and the dataset of Flemish sentinel-2 BVM.
 
+## Example Image from BVM dataset
+![Example Image](https://github.com/username/repository/blob/main/images/example.png)
+
 ## Features
 
 - Utilizes various segmentation architectures available in segmentation_models_pytorch
